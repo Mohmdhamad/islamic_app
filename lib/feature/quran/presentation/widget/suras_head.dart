@@ -15,14 +15,14 @@ class SurasHead extends StatelessWidget {
             child: Text(
               'Numbers of Ayat',
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           Expanded(
             child: Text(
               'Sura name',
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
         ],

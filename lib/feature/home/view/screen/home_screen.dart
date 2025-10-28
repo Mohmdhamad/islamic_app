@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:islamic_app/core/style/app_images.dart';
+import 'package:islamic_app/core/constants/app_images.dart';
 import 'package:islamic_app/feature/hadeth/view/screen/hadeth_tab.dart';
 import 'package:islamic_app/feature/home/view/widget/home_appbar.dart';
-import 'package:islamic_app/feature/quran/view/screen/quran_tab.dart';
+import 'package:islamic_app/feature/quran/presentation/screen/quran_tab.dart';
 import 'package:islamic_app/feature/radio/view/screen/radio_tab.dart';
 import 'package:islamic_app/feature/sebha/view/screen/sebha_tab.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   static const String routeName = 'home_screen';
 
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
 
   List<Widget> tabs = [QuranTab(), HadethTab(), SebhaTab(), RadioTab()];
@@ -35,6 +40,9 @@ class HomeScreen extends StatelessWidget {
             child: BottomNavigationBar(
               currentIndex: selectedIndex,
               onTap: (index) {
+                setState(() {
+
+                });
                 selectedIndex = index;
               },
               items: [

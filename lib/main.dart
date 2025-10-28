@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:islamic_app/core/style/light_theme.dart';
+import 'package:islamic_app/core/style/themes.dart';
+import 'package:islamic_app/feature/hadeth/view/screen/hadeth_details_screen.dart';
 import 'package:islamic_app/feature/home/view/screen/home_screen.dart';
-import 'package:islamic_app/feature/quran/view/screen/sura_details_screen.dart';
+import 'package:islamic_app/feature/quran/presentation/screen/sura_details_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
           routes: {
             HomeScreen.routeName: (context) => HomeScreen(),
             SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
+            HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
           },
         );
       },

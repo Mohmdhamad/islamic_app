@@ -20,11 +20,20 @@ class AppThemeData {
         fontWeight: FontWeight.bold,
         color: AppColors.black,
       ),
-      bodyLarge: const TextStyle(
+      titleMedium: const TextStyle(
         color: AppColors.black,
         fontSize: 25,
         fontWeight: FontWeight.w600,
       ),
+      bodyMedium: const TextStyle(
+        color: AppColors.black,
+        fontSize: 20,
+        fontWeight: FontWeight.w400,
+      ),
+    ),
+    dividerTheme: DividerThemeData(
+      color: AppColors.primaryLightColor,
+      thickness: 3,
     ),
   );
 
