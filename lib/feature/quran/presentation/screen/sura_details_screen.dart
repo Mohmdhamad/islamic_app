@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamic_app/core/constants/app_images.dart';
-import 'package:islamic_app/core/style/colors.dart';
 import 'package:islamic_app/feature/quran/presentation/widget/sura_content.dart';
+import 'package:islamic_app/feature/settings/view_model/provider/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeName = 'sura_details_screen';
@@ -18,6 +19,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     var args = ModalRoute.of(context)?.settings.arguments as SuraDetailsArgs;
     if (verses.isEmpty) {
       loadSuras(args.number);
@@ -25,7 +27,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     return Stack(
       children: [
         Image.asset(
-          AppImages.lightBackground,
+          provider.appTheme == ThemeMode.light
+              ? AppImages.lightBackground
+              : AppImages.darkBackground,
           width: double.infinity,
           fit: BoxFit.fill,
         ),
@@ -39,7 +43,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           body: verses.isEmpty
               ? Center(
                   child: CircularProgressIndicator(
-                    color: AppColors.primaryLightColor,
+                    color: Theme.of(context).primaryColor,
                   ),
                 )
               : SuraContent(verses: verses),
@@ -52,7 +56,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     String content = await rootBundle.loadString('assets/files/$index.txt');
     List<String> lines = content.split('\n');
     verses = lines;
-    setState(() {});
+    if (mounted) {
+      setState(() {});
+    }
   }
 }
 

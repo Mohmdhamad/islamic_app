@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/style/colors.dart';
 import 'item_sura_details.dart';
 
 class SuraContent extends StatelessWidget {
@@ -20,7 +20,7 @@ class SuraContent extends StatelessWidget {
         vertical: MediaQuery.of(context).size.height * .1,
       ),
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadiusDirectional.circular(20.r),
       ),
       child: ListView.builder(

@@ -7,4 +7,8 @@ class AppImages {
   static const String sebhaIcon = 'assets/images/icon_sebha.png';
   static const String quranLogo = 'assets/images/qur2an_screen_logo.png';
   static const String hadethLogo = 'assets/images/hadeth_logo.png';
+  static const String headSebhaLight = 'assets/images/head_sebha_logo.png';
+  static const String bodySebhaLight = 'assets/images/body_sebha_logo.png';
+  static const String headSebhaDark = 'assets/images/head_sebha_dark.png';
+  static const String bodySebhaDark = 'assets/images/body_sebha_dark.png';
 }

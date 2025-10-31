@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/core/constants/app_images.dart';
 import 'package:islamic_app/feature/hadeth/view/widget/hadeth_content.dart';
+import 'package:islamic_app/feature/settings/view_model/provider/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../../model/hadeth_model.dart';
 
@@ -16,11 +18,14 @@ class HadethDetailsScreen extends StatefulWidget {
 class _HadethDetailsScreen extends State<HadethDetailsScreen> {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     var hadeth = ModalRoute.of(context)?.settings.arguments as HadethModel;
     return Stack(
       children: [
         Image.asset(
-          AppImages.lightBackground,
+          provider.appTheme == ThemeMode.light
+              ? AppImages.lightBackground
+              : AppImages.darkBackground,
           width: double.infinity,
           fit: BoxFit.fill,
         ),

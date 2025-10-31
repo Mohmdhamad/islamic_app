@@ -17,7 +17,9 @@ class ItemSuraDetails extends StatelessWidget {
       '$content ($index)',
       textDirection: TextDirection.rtl,
       textAlign: TextAlign.center,
-      style: Theme.of(context).textTheme.bodyMedium,
+      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+            fontSize: 22,
+          ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app/l10n/app_localizations.dart';
 
 class AhadethHead extends StatelessWidget {
   const AhadethHead({super.key});
@@ -8,7 +9,10 @@ class AhadethHead extends StatelessWidget {
     return Column(
       children: [
         Divider(),
-        Text('Ahadeth', style: Theme.of(context).textTheme.titleMedium),
+        Text(
+          AppLocalizations.of(context)!.hadethName,
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
         Divider(),
       ],
     );

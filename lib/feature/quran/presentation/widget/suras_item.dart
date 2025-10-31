@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:islamic_app/core/style/colors.dart';
+import 'package:islamic_app/feature/quran/data/sura_data.dart';
 import 'package:islamic_app/feature/quran/presentation/screen/sura_details_screen.dart';
 
 class SurasItem extends StatelessWidget {
@@ -16,15 +16,15 @@ class SurasItem extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              '114',
+              suraVerseCounts[number - 1].toString(),
               textAlign: TextAlign.center,
               style: Theme.of(
                 context,
-              ).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w400),
+              ).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w400),
             ),
           ),
           Container(
-            color: AppColors.primaryLightColor,
+            color: Theme.of(context).dividerColor,
             height: double.infinity,
             width: 3.w,
             padding: EdgeInsetsGeometry.zero,
@@ -42,7 +42,7 @@ class SurasItem extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: Theme.of(
                   context,
-                ).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w400),
+                ).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w400),
               ),
             ),
           ),
@@ -51,4 +51,3 @@ class SurasItem extends StatelessWidget {
     );
   }
 }
-

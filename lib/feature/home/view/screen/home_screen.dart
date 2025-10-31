@@ -5,6 +5,10 @@ import 'package:islamic_app/feature/home/view/widget/home_appbar.dart';
 import 'package:islamic_app/feature/quran/presentation/screen/quran_tab.dart';
 import 'package:islamic_app/feature/radio/view/screen/radio_tab.dart';
 import 'package:islamic_app/feature/sebha/view/screen/sebha_tab.dart';
+import 'package:islamic_app/feature/settings/view/screen/settings_tab.dart';
+import 'package:islamic_app/feature/settings/view_model/provider/app_config_provider.dart';
+import 'package:islamic_app/l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home_screen';
@@ -18,14 +22,23 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
 
-  List<Widget> tabs = [QuranTab(), HadethTab(), SebhaTab(), RadioTab()];
+  List<Widget> tabs = [
+    QuranTab(),
+    HadethTab(),
+    SebhaTab(),
+    RadioTab(),
+    SettingsTab(),
+  ];
 
   @override
   Widget build(BuildContext context) {
+    AppConfigProvider provider = Provider.of<AppConfigProvider>(context);
     return Stack(
       children: [
         Image.asset(
-          'assets/images/default_bg.png',
+          provider.appTheme == ThemeMode.light
+              ? AppImages.lightBackground
+              : AppImages.darkBackground,
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.fill,
@@ -39,28 +52,31 @@ class _HomeScreenState extends State<HomeScreen> {
             ).copyWith(canvasColor: Theme.of(context).primaryColor),
             child: BottomNavigationBar(
               currentIndex: selectedIndex,
+              type: BottomNavigationBarType.fixed,
               onTap: (index) {
-                setState(() {
-
-                });
+                setState(() {});
                 selectedIndex = index;
               },
               items: [
                 BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage(AppImages.quranIcon)),
-                  label: 'quran',
+                  icon: const ImageIcon(AssetImage(AppImages.quranIcon)),
+                  label: AppLocalizations.of(context)!.quran,
                 ),
                 BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage(AppImages.hadethIcon)),
-                  label: 'hadeth',
+                  icon: const ImageIcon(AssetImage(AppImages.hadethIcon)),
+                  label: AppLocalizations.of(context)!.hadeth,
                 ),
                 BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage(AppImages.sebhaIcon)),
-                  label: 'sebha',
+                  icon: const ImageIcon(AssetImage(AppImages.sebhaIcon)),
+                  label: AppLocalizations.of(context)!.sebha,
                 ),
                 BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage(AppImages.radioIcon)),
-                  label: 'radio',
+                  icon: const ImageIcon(AssetImage(AppImages.radioIcon)),
+                  label: AppLocalizations.of(context)!.radio,
+                ),
+                BottomNavigationBarItem(
+                  icon: const Icon(Icons.settings),
+                  label: AppLocalizations.of(context)!.settings,
                 ),
               ],
             ),

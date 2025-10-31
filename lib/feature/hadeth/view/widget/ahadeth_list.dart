@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/feature/hadeth/model/hadeth_model.dart';
-import 'package:islamic_app/feature/hadeth/view/widget/hadeth_item.dart';
+
+import 'hadeth_item.dart';
 
 class AhadethList extends StatelessWidget {
    AhadethList({super.key,required this.ahadeth});
@@ -14,7 +15,7 @@ class AhadethList extends StatelessWidget {
         itemBuilder: (context, index) {
           return HadethItem(hadeth: ahadeth[index]);
         },
-        separatorBuilder: (context, index) => Divider(thickness: 1.5),
+        separatorBuilder: (context, index) => Divider(thickness: 1.5,color: Theme.of(context).dividerColor,),
         itemCount: ahadeth.length,
       ),
     );

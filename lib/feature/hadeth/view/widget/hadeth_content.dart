@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/style/colors.dart';
-
 class HadethContent extends StatelessWidget {
   HadethContent({super.key, required this.ahadeth});
 
@@ -20,7 +18,7 @@ class HadethContent extends StatelessWidget {
         vertical: MediaQuery.of(context).size.height * .1,
       ),
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadiusDirectional.circular(10.r),
       ),
       child: ListView.builder(
@@ -30,7 +28,7 @@ class HadethContent extends StatelessWidget {
             ahadeth[index],
             textAlign: TextAlign.center,
             textDirection: TextDirection.rtl,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: Theme.of(context).textTheme.bodyLarge,
           );
         },
       ),
