@@ -70,9 +70,6 @@ class AppThemeData {
         fontWeight: FontWeight.w400,
       ),
     ),
-    dividerTheme: const DividerThemeData(
-      color: AppColors.yellow,
-      thickness: 3,
-    ),
+    dividerTheme: const DividerThemeData(color: AppColors.yellow, thickness: 3),
   );
 }

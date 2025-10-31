@@ -1,30 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:islamic_app/core/constants/app_images.dart';
-import 'package:islamic_app/feature/settings/view_model/provider/app_config_provider.dart';
+import 'package:islamic_app/feature/sebha/view/widget/sebha_widget_builder.dart';
+import 'package:islamic_app/feature/sebha/view/widget/tasbeh_widget.dart';
 import 'package:provider/provider.dart';
+
+import '../../view_model/sebha_provider/sebha_provider.dart';
 
 class SebhaTab extends StatelessWidget {
   const SebhaTab({super.key});
 
   @override
   Widget build(BuildContext context) {
-    AppConfigProvider provider = Provider.of<AppConfigProvider>(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Stack(
-          children: [
-            Image.asset(provider.isDarkTheme() ? AppImages.headSebhaDark : AppImages.headSebhaLight),
-            Image.asset(provider.isDarkTheme() ? AppImages.bodySebhaDark : AppImages.bodySebhaLight),
-          ],
-        ),
-        ElevatedButton(
-            onPressed: (){},
-            child: Text('')),
-
-
-      ],
+    return ChangeNotifierProvider(
+      create: (context) => SebhaProvider(),
+      builder: (context, child) {
+        return Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            spacing: MediaQuery.of(context).size.height * 0.05,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [const SebhaWidgetBuilder(), const TasbehWidget()],
+          ),
+        );
+      },
     );
   }
 }

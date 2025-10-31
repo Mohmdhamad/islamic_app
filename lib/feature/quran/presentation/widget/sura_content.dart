@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'item_sura_details.dart';
 
 class SuraContent extends StatelessWidget {
-   SuraContent({super.key,required this.verses});
+  SuraContent({super.key, required this.verses});
   List<String> verses;
 
   @override
@@ -26,10 +25,7 @@ class SuraContent extends StatelessWidget {
       child: ListView.builder(
         itemCount: verses.length,
         itemBuilder: (context, index) {
-          return ItemSuraDetails(
-            content: verses[index],
-            index: index,
-          );
+          return ItemSuraDetails(content: verses[index], index: index);
         },
       ),
     );

@@ -28,8 +28,9 @@ class _HadethTabState extends State<HadethTab> {
         ahadeth.isEmpty
             ? Center(
                 child: CircularProgressIndicator(
-                color: Theme.of(context).primaryColor,
-              ))
+                  color: Theme.of(context).primaryColor,
+                ),
+              )
             : AhadethList(ahadeth: ahadeth),
       ],
     );

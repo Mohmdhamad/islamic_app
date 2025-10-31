@@ -11,16 +11,11 @@ class SurasList extends StatelessWidget {
     return Expanded(
       flex: 2,
       child: ListView.separated(
-        separatorBuilder: (context, index) => Divider(
-          color: Theme.of(context).dividerColor,
-          thickness: 2,
-        ),
+        separatorBuilder: (context, index) =>
+            Divider(color: Theme.of(context).dividerColor, thickness: 2),
         shrinkWrap: true,
         itemBuilder: (context, index) {
-          return SurasItem(
-            name: SurasNames.ArSuras[index],
-            number: index + 1,
-          );
+          return SurasItem(name: SurasNames.ArSuras[index], number: index + 1);
         },
         itemCount: SurasNames.ArSuras.length,
       ),

@@ -49,4 +49,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get dark => 'داكن';
+
+  @override
+  String get count => 'عدد التسبيحات';
 }

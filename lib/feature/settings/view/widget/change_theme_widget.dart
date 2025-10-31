@@ -22,7 +22,7 @@ class _ChangeThemeWidgetState extends State<ChangeThemeWidget> {
 
     return DropdownButtonFormField<ThemeMode>(
       key: _dropdownKey,
-      value: provider.appTheme,
+      initialValue: provider.appTheme,
       isExpanded: true,
       alignment: AlignmentDirectional.centerStart,
       dropdownColor: AppColors.primaryLightColor,
@@ -30,30 +30,20 @@ class _ChangeThemeWidgetState extends State<ChangeThemeWidget> {
       iconSize: 30.sp,
       menuMaxHeight: 200.h,
       borderRadius: BorderRadius.circular(10.r),
-      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-            color: AppColors.black,
-            fontSize: 16.sp,
-          ),
+      style: Theme.of(
+        context,
+      ).textTheme.bodyMedium?.copyWith(color: AppColors.black, fontSize: 16.sp),
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(
-          vertical: 15.h,
-          horizontal: 12.w,
-        ),
+        contentPadding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 12.w),
         filled: true,
         fillColor: AppColors.primaryLightColor,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15.r),
-          borderSide: BorderSide(
-            color: AppColors.black,
-            width: 2,
-          ),
+          borderSide: BorderSide(color: AppColors.black, width: 2),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15.r),
-          borderSide: BorderSide(
-            color: Colors.grey.shade700,
-            width: 2,
-          ),
+          borderSide: BorderSide(color: Colors.grey.shade700, width: 2),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15.r),

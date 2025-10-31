@@ -9,9 +9,12 @@ import 'package:provider/provider.dart';
 import 'l10n/app_localizations.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-      create: (context)=>AppConfigProvider(),
-      child: MyApp()));
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => AppConfigProvider(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +22,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppConfigProvider  provider = Provider.of<AppConfigProvider>(context);
+    AppConfigProvider provider = Provider.of<AppConfigProvider>(context);
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       minTextAdapt: true,
