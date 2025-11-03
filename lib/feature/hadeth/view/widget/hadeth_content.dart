@@ -28,7 +28,7 @@ class HadethContent extends StatelessWidget {
             ahadeth[index],
             textAlign: TextAlign.center,
             textDirection: TextDirection.rtl,
-            style: Theme.of(context).textTheme.bodyLarge,
+            style: Theme.of(context).textTheme.bodyMedium,
           );
         },
       ),

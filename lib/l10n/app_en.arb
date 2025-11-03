@@ -13,5 +13,6 @@
   "arabic": "Arabic",
   "light": "Light",
   "dark": "Dark",
-  "count": "Count"
+  "count": "Count",
+  "mode": "Mode"
 }

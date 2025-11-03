@@ -16,11 +16,16 @@ class SebhaWidgetBuilder extends StatelessWidget {
         children: [
           Align(
             alignment: Alignment.topCenter,
-            child: Image.asset(
-              provider.isDarkTheme()
-                  ? AppImages.headSebhaDark
-                  : AppImages.headSebhaLight,
-              scale: 1.5,
+            child: Padding(
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height * 0.037,
+              ),
+              child: Image.asset(
+                provider.isDarkTheme()
+                    ? AppImages.headSebhaDark
+                    : AppImages.headSebhaLight,
+                scale: 1.5,
+              ),
             ),
           ),
           Align(

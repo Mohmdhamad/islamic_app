@@ -187,6 +187,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Count'**
   String get count;
+
+  /// No description provided for @mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Mode'**
+  String get mode;
 }
 
 class _AppLocalizationsDelegate

@@ -52,4 +52,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get count => 'عدد التسبيحات';
+
+  @override
+  String get mode => 'الثيم';
 }

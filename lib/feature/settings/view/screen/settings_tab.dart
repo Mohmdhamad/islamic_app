@@ -20,7 +20,10 @@ class SettingsTab extends StatelessWidget {
             style: Theme.of(context).textTheme.titleMedium,
           ),
           SelectLangWidget(),
-          Text('Mode', style: Theme.of(context).textTheme.titleMedium),
+          Text(
+            AppLocalizations.of(context)!.mode,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
           ChangeThemeWidget(),
         ],
       ),

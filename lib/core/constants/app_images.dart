@@ -11,4 +11,5 @@ class AppImages {
   static const String bodySebhaLight = 'assets/images/body_sebha_logo.png';
   static const String headSebhaDark = 'assets/images/head_sebha_dark.png';
   static const String bodySebhaDark = 'assets/images/body_sebha_dark.png';
+  static const String radio = 'assets/images/radio_image.png';
 }

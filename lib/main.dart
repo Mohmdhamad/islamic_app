@@ -4,14 +4,25 @@ import 'package:islamic_app/core/style/themes.dart';
 import 'package:islamic_app/feature/hadeth/view/screen/hadeth_details_screen.dart';
 import 'package:islamic_app/feature/home/view/screen/home_screen.dart';
 import 'package:islamic_app/feature/quran/presentation/screen/sura_details_screen.dart';
+import 'package:islamic_app/feature/radio/view_model/provider/radio_provider.dart';
 import 'package:islamic_app/feature/settings/view_model/provider/app_config_provider.dart';
 import 'package:provider/provider.dart';
+import 'core/cache/cache_helper.dart';
 import 'l10n/app_localizations.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  CacheHelper().init();
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => AppConfigProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => AppConfigProvider()..loadSettings(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => RadioProvider()..getRadios(),
+        ),
+      ],
       child: MyApp(),
     ),
   );

@@ -56,9 +56,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     String content = await rootBundle.loadString('assets/files/$index.txt');
     List<String> lines = content.split('\n');
     verses = lines;
-    if (mounted) {
-      setState(() {});
-    }
+    setState(() {});
   }
 }
 
